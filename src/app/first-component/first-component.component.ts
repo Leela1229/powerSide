@@ -23,11 +23,10 @@ export class FirstComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-
-onSubmit(f: NgForm) {
-  this.displayJson = this.model;
-  this.notify.emit(this.displayJson);
-}
+  onSubmit(f: NgForm) {
+    Object.assign(this.displayJson,this.model)
+    this.notify.emit(this.displayJson);
+  }
 
 }
 

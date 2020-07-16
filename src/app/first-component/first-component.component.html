@@ -3,8 +3,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-8 offset-md-2">
-              <h3>Angular 7 Template-Driven Form Validation</h3>
-              <form name="form" (ngSubmit)="onSubmit(f) " #f="ngForm" ngNativeValidate>
+              <form name="form" (ngSubmit)="onSubmit(f); f.resetForm() " #f="ngForm" ngNativeValidate>
                   <div class="form-group">
                       <label for="firstName">First Name</label>
                       <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
